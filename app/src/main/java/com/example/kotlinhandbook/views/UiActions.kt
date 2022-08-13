@@ -1,4 +1,4 @@
-package com.example.kotlinhandbook
+package com.example.kotlinhandbook.views
 
 /*This interface shows actions, which can be used in Ui of fragment*/
 

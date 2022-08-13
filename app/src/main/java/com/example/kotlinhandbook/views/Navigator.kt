@@ -1,4 +1,4 @@
-package com.example.kotlinhandbook
+package com.example.kotlinhandbook.views
 
 /*This interface shows actions, which responsible for navigation between fragments*/
 

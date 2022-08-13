@@ -1,4 +1,4 @@
 package com.example.kotlinhandbook
 
-class MainTopicsFragment {
+class App {
 }

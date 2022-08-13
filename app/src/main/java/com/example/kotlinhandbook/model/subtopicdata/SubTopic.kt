@@ -1,4 +1,4 @@
-package com.example.kotlinhandbook.model
+package com.example.kotlinhandbook.model.subtopicdata
 
 data class SubTopic(
     val id: Long,

@@ -1,4 +1,4 @@
-package com.example.kotlinhandbook
+package com.example.kotlinhandbook.views.base
 
 import java.io.Serializable
 
