@@ -1,3 +1,105 @@
 <resources>
     <string name="app_name">Kotlin Handbook</string>
+
+    <!--Main Topics strings:-->
+    <string name="theme_1">Introducing into Kotlin</string>
+    <string name="theme_2">Basics of Kotlin</string>
+    <string name="theme_3">Functional Programming</string>
+    <string name="theme_4">Object-oriented Programming</string>
+    <string name="theme_5">Generics</string>
+    <string name="theme_6">OOP extra features</string>
+    <string name="theme_7">Collections and sequences</string>
+    <string name="theme_8">Coroutines</string>
+    <string name="theme_9">Asynchronous Flow</string>
+
+    <!--Sub Topics strings:-->
+    <string name="theme_1_1">What Kotlin is. Your first programme</string>
+    <string name="theme_1_2">First programme in IntelliJ IDEA</string>
+
+    <string name="theme_2_1">Programme structure</string>
+    <string name="theme_2_2">Variables</string>
+    <string name="theme_2_3">Basic types</string>
+    <string name="theme_2_4">Console output and input</string>
+    <string name="theme_2_5">Numerals operations</string>
+    <string name="theme_2_6">Conditional expressions</string>
+    <string name="theme_2_7">Conditional constructions</string>
+    <string name="theme_2_8">Loops</string>
+    <string name="theme_2_9">Ranges</string>
+    <string name="theme_2_10">Arrays</string>
+
+    <string name="theme_3_1">Functions and its parameters</string>
+    <string name="theme_3_2">Variable number of parameters. Vararg</string>
+    <string name="theme_3_3">Result returning. Operator return</string>
+    <string name="theme_3_4">Single-line and local functions</string>
+    <string name="theme_3_5">Function overriding</string>
+    <string name="theme_3_6">Function types</string>
+    <string name="theme_3_7">High-order functions</string>
+    <string name="theme_3_8">Anonymous functions</string>
+    <string name="theme_3_9">Lambda functions</string>
+
+    <string name="theme_4_1">Classes and objects</string>
+    <string name="theme_4_2">Constructors</string>
+    <string name="theme_4_3">Packages and import</string>
+    <string name="theme_4_4">Inheritance</string>
+    <string name="theme_4_5">Visibility modifiers</string>
+    <string name="theme_4_6">Getters and setters</string>
+    <string name="theme_4_7">Overriding methods and properties</string>
+    <string name="theme_4_8">Abstract classes and methods</string>
+    <string name="theme_4_9">Interfaces</string>
+    <string name="theme_4_10">Nested classes and interfaces</string>
+    <string name="theme_4_11">Data-classes</string>
+    <string name="theme_4_12">Enums</string>
+    <string name="theme_4_13">Delegation</string>
+    <string name="theme_4_14">Anonymous classes and objects</string>
+
+    <string name="theme_5_1">Generic classes and functions</string>
+    <string name="theme_5_2">Limitation of generics</string>
+    <string name="theme_5_3">Variance, covariance and contravariance</string>
+
+    <string name="theme_6_1">Exceptions</string>
+    <string name="theme_6_2">Null and nullable-types</string>
+    <string name="theme_6_3">Type conversion</string>
+    <string name="theme_6_4">Extensions</string>
+    <string name="theme_6_5">Operators overriding</string>
+    <string name="theme_6_6">Delegation properties</string>
+    <string name="theme_6_7">Scope-functions</string>
+    <string name="theme_6_8">Infix notations</string>
+
+    <string name="theme_7_1">Mutable and immutable collections</string>
+    <string name="theme_7_2">List</string>
+    <string name="theme_7_3">Set</string>
+    <string name="theme_7_4">Map</string>
+    <string name="theme_7_5">Sequences</string>
+    <string name="theme_7_6">Differences between Sequences and Iterable</string>
+    <string name="theme_7_7">Filtering</string>
+    <string name="theme_7_8">Element check</string>
+    <string name="theme_7_9">Transformations</string>
+    <string name="theme_7_10">Grouping</string>
+    <string name="theme_7_11">Sorting</string>
+    <string name="theme_7_12">Aggregate operations</string>
+    <string name="theme_7_13">Basic operations with collections</string>
+    <string name="theme_7_14">Getting part of elements</string>
+    <string name="theme_7_15">Getting individual elements</string>
+
+    <string name="theme_8_1">Introducing to coroutines</string>
+    <string name="theme_8_2">Area of coroutine</string>
+    <string name="theme_8_3">Launch and Job</string>
+    <string name="theme_8_4">Async, Await and Deferred</string>
+    <string name="theme_8_5">Coroutine dispatchers</string>
+    <string name="theme_8_6">Cancelling coroutine running</string>
+    <string name="theme_8_7">Canals</string>
+
+    <string name="theme_9_1">Introducing into asynchronous flow</string>
+    <string name="theme_9_2">Creating asynchronous flow</string>
+    <string name="theme_9_3">Flow operations</string>
+    <string name="theme_9_4">Functions Count, Take, Drop. Number of items in flow</string>
+    <string name="theme_9_5">Functions First, Last, Single</string>
+    <string name="theme_9_6">Data transformation. Map and Transform</string>
+    <string name="theme_9_7">Data filtering</string>
+    <string name="theme_9_8">Data aggregation. Reduce and Fold</string>
+    <string name="theme_9_9">Merging flows</string>
+
+
+
+
 </resources>
