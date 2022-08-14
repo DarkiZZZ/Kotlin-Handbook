@@ -98,8 +98,7 @@
     <string name="theme_9_7">Data filtering</string>
     <string name="theme_9_8">Data aggregation. Reduce and Fold</string>
     <string name="theme_9_9">Merging flows</string>
-
-
+    <string name="app_title">Kotlin Handbook</string>
 
 
 </resources>
