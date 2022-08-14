@@ -1,4 +1,4 @@
-package com.example.kotlinhandbook.model.maintopicdata
+package com.example.kotlinhandbook.model.data
 
 data class MainTopic(
     val id: Long,

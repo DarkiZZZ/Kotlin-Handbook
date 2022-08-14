@@ -1,4 +1,4 @@
-package com.example.kotlinhandbook.model.maintopicdata
+package com.example.kotlinhandbook.model.data
 
 import com.example.kotlinhandbook.R
 
