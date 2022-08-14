@@ -8,25 +8,25 @@ class TopicRepository: BaseRepository {
         set(value) {
             if(field != value){
                 field = value
-                listeners.forEach {  }
+                listeners.forEach { it(value) }
             }
         }
 
     private val listeners = mutableSetOf<MainListener>()
 
-    override fun getAvailableTopics(): List<MainTopic> {
-        TODO("Not yet implemented")
-    }
+    override fun getAvailableTopics(): List<MainTopic> = AVAILABLE_TOPICS
 
     override fun getById(id: Long): MainTopic {
-        TODO("Not yet implemented")
+        return AVAILABLE_TOPICS.first { it.id == id }
     }
 
     override fun addListener(listener: MainListener) {
-        TODO("Not yet implemented")
+        listeners +=listener
+        listener(currentTopic)
     }
 
     override fun removeListener(listener: MainListener) {
+        listeners -= listener
     }
 
     companion object{
