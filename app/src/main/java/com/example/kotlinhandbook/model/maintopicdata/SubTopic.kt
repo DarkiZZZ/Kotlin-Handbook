@@ -1,7 +1,7 @@
 package com.example.kotlinhandbook.model.maintopicdata
 
-data class MainTopic(
+data class SubTopic(
     val id: Long,
     val nameRes: Int,
-    val subTopics: List<SubTopic>
+    var isRead: Boolean = false
 )
