@@ -13,6 +13,8 @@ import com.example.kotlinhandbook.views.Navigator
 import com.example.kotlinhandbook.views.UiActions
 import com.example.kotlinhandbook.views.base.BaseScreen
 
+const val ARG_SCREEN = "ARG_SCREEN"
+
 class MainViewModel(application: Application):
     AndroidViewModel(application), Navigator, UiActions {
 
@@ -42,7 +44,7 @@ class MainViewModel(application: Application):
 
     fun lauchFragment(activity: MainActivity, screen: BaseScreen, addToBackStack: Boolean = true) {
         val fragment = screen.javaClass.enclosingClass.newInstance() as Fragment
-        fragment.arguments = bundleOf(/*todo ARG_SCREEN*/ to screen)
+        fragment.arguments = bundleOf( ARG_SCREEN to screen)
 
         val transaction = activity.supportFragmentManager.beginTransaction()
         if (addToBackStack) transaction.addToBackStack(null)
