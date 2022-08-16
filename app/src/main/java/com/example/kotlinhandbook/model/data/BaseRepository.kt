@@ -1,6 +1,6 @@
 package com.example.kotlinhandbook.model.data
 
-import com.example.kotlinhandbook.model.Repository
+import core.model.Repository
 
 typealias MainListener = (MainTopic) -> Unit
 
