@@ -6,26 +6,51 @@ import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider.*
-import com.example.kotlinhandbook.views.HasScreenTitle
-import com.example.kotlinhandbook.views.base.BaseFragment
+import core.views.HasScreenTitle
+import core.views.BaseFragment
 import com.example.kotlinhandbook.views.base.maintopic.MainTopicFragment
+import core.ActivityScopeViewModel
+import core.navigator.IntermediateNavigator
+import core.navigator.StackFragmentNavigator
+import core.uiactions.AndroidUiActions
+import core.utils.viewModelCreator
+import core.views.FragmentsHolder
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), FragmentsHolder {
 
-    private val activityViewModel by viewModels<MainViewModel> { AndroidViewModelFactory(application) }
+    private lateinit var navigator: StackFragmentNavigator
+
+    private val activityViewModel by viewModelCreator<ActivityScopeViewModel>{
+        ActivityScopeViewModel(
+            uiActions = AndroidUiActions(applicationContext),
+            navigator = IntermediateNavigator()
+        )
+    }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if (savedInstanceState == null){
-            activityViewModel.lauchFragment(
-                activity = this,
-                screen = MainTopicFragment.Screen(),
-                addToBackStack = false
-            )
-        }
-        supportFragmentManager.registerFragmentLifecycleCallbacks(fragmentCallbacks, false)
+        navigator = StackFragmentNavigator(
+            activity = this,
+            containerId = R.id.fragmentContainer,
+            defaultTitle = getString(R.string.app_name),
+            animations = StackFragmentNavigator.Animations(
+                animEnter = R.anim.enter,
+                animExit = R.anim.exit,
+                animPopEnter = R.anim.pop_enter,
+                animPopExit = R.anim.pop_exit
+            ),
+            initialScreenCreator = {MainTopicFragment.Screen()}
+        )
+        navigator.onCreate(savedInstanceState)
+    }
+
+    override fun onDestroy() {
+        navigator.onDestroy()
+        super.onDestroy()
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -35,49 +60,20 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        activityViewModel.whenActivityActive.resource = this
+        activityViewModel.navigator.setTarget(navigator)
     }
 
     override fun onPause() {
         super.onPause()
-        activityViewModel.whenActivityActive.resource = null
+        activityViewModel.navigator.setTarget(null)
     }
 
-    override fun onDestroy() {
-        supportFragmentManager.unregisterFragmentLifecycleCallbacks(fragmentCallbacks)
-        super.onDestroy()
+    override fun notifyScreenUpdates() {
+        navigator.notifyScreenUpdates()
     }
 
-    fun notifyScreenUpdates(){
-        val fragment = supportFragmentManager.findFragmentById(R.id.fragmentContainer)
-
-        if (supportFragmentManager.backStackEntryCount > 0){
-            supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        }
-        else{
-            supportActionBar?.setDisplayHomeAsUpEnabled(false)
-        }
-
-        if (fragment is HasScreenTitle && fragment.getScreenTitle() != null){
-            supportActionBar?.title = fragment.getScreenTitle()
-        }
-        else{
-            supportActionBar?.title = getString(R.string.app_title)
-        }
-
-        val result = activityViewModel.result.value?.getValue() ?: return
-        if (fragment is BaseFragment){
-            fragment.viewModel.onResult(result)
-        }
+    override fun getActivityScopeViewModel(): ActivityScopeViewModel {
+        return activityViewModel
     }
 
-    private val fragmentCallbacks = object : FragmentManager.FragmentLifecycleCallbacks(){
-        override fun onFragmentCreated(
-            fm: FragmentManager,
-            f: Fragment,
-            savedInstanceState: Bundle?
-        ) {
-            notifyScreenUpdates()
-        }
-    }
 }
