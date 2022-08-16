@@ -1,4 +1,4 @@
-package com.example.kotlinhandbook.utils
+package core.utils
 
 class Event<T>(private val value: T) {
 

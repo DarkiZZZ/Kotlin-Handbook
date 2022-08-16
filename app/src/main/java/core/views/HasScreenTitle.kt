@@ -1,4 +1,4 @@
-package com.example.kotlinhandbook.views
+package core.views
 
 /*This interface is implemented by fragments, which can show screen title*/
 

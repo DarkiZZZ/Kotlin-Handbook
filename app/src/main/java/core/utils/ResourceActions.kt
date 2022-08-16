@@ -1,4 +1,4 @@
-package com.example.kotlinhandbook.utils
+package core.utils
 
 typealias ResourceAction<T> = (T) -> Unit
 

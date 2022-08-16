@@ -1,6 +1,6 @@
-package com.example.kotlinhandbook.views
+package core.navigator
 
-import com.example.kotlinhandbook.views.base.BaseScreen
+import core.views.BaseScreen
 
 /*This interface shows actions, which responsible for navigation between fragments*/
 

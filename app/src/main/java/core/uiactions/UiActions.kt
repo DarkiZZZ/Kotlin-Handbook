@@ -1,4 +1,4 @@
-package com.example.kotlinhandbook.views
+package core.uiactions
 
 /*This interface shows actions, which can be used in Ui of fragment*/
 

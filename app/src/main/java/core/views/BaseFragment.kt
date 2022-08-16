@@ -1,8 +1,7 @@
-package com.example.kotlinhandbook.views.base
+package core.views
 
 import androidx.fragment.app.Fragment
 import com.example.kotlinhandbook.MainActivity
-import com.example.kotlinhandbook.views.base.BaseViewModel
 
 abstract class BaseFragment : Fragment() {
 
